@@ -1,21 +1,21 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 import router from './router'
-// import { TUser } from '@/types'
+import { TUser } from '@/types'
 
 // 请求拦截器
 axios.interceptors.request.use(
   (config: AxiosRequestConfig): AxiosRequestConfig => {
     // 抓取 token（从状态管理中读取 token）
-    // let user: TUser = window.localStorage.getItem('user')
-    // user = user ? JSON.parse(user) : ''
+    let user: TUser = window.localStorage.getItem('user')
+    user = user ? JSON.parse(user) : ''
 
     // 将 token 携带到请求头
-    // config.headers = {
-    //   token: user?.token
-    // }
     config.headers = {
-      token: 'eyjhbgclsjdflkjadjfoshiguasiufhksadhfiuasfksadifhsadifhsadiuhfius'
+      token: user?.token
     }
+    // config.headers = {
+    //   token: 'eyjhbgclsjdflkjadjfoshiguasiufhksadhfiuasfksadifhsadifhsadiuhfius'
+    // }
 
     // 显示 loading
 

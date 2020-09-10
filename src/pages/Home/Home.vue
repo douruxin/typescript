@@ -11,8 +11,7 @@ import { Vue, Component } from 'vue-property-decorator'
 
 export default class Home extends Vue {
   mounted (): void {
-    console.log(window)
-    window.axios({
+    this.$http({
       url: '/api/db/in_theaters'
     }).then(res => {
       console.log(res)

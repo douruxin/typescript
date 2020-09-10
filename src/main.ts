@@ -3,8 +3,7 @@ import App from './layouts/App.vue'
 import router from './plugins/router'
 import axios from './plugins/axios'
 
-// 将 axios 挂载到 window 上
-window.axios = axios
+Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 

@@ -29,7 +29,13 @@ declare global {
   }
 }
 
+interface IStoreState {
+  home: object[],
+  booLoading: boolean
+}
+
 export {
   Person,
-  TUser
+  TUser,
+  IStoreState
 }
